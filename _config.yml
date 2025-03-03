@@ -1,6 +1,6 @@
 title: "Day Dots"
 description: "A day-by-day journal in a grid format"
-url: "https://boysbytes.github.io/" # Change if using a custom domain
+url: "https://boysbytes.github.io" # Change if using a custom domain
 baseurl: "/day-dots-jekyll" # Keep empty unless using a subdirectory
 plugins:
 #  - jekyll-feed # Enables RSS feed
