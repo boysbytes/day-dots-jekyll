@@ -6,16 +6,17 @@ document.addEventListener('DOMContentLoaded', function() {
     const closePopup = document.getElementById('closePopup');
 
     // Fetch and process data from days.json
-   fetch('_data/days.json')
-        .then(response => response.json())
-        .then(daysData => {
-            generateDays(daysData);
-        })
-        .catch(error => {
-            console.error('Error fetching days data:', error);
-            // If the fetch fails, generateDays with an empty object
-            generateDays({});
-        });
+    fetch('/day-dots-jekyll/assets/data/days.json')
+    .then(response => response.json())
+    .then(daysArray => {
+        // Convert array to date-keyed object
+        const daysData = daysArray.reduce((acc, day) => {
+        acc[day.date] = day;
+        return acc;
+        }, {});
+        generateDays(daysData);
+    })
+
 
     function generateDays(daysData) {
         // Determine start and end dates based on JSON entries
@@ -133,7 +134,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (dayDetails.images && Array.isArray(dayDetails.images)) {
             dayDetails.images.forEach(imageName => {
                 const imgElement = document.createElement('img');
-                imgElement.src = `images/${imageName}`;
+                imgElement.src = `{{ site.baseurl }}/assets/images/${imageName}`;
                 imgElement.style.maxWidth = '100%';
                 imgElement.style.height = 'auto';
                 popupContent.appendChild(imgElement);
