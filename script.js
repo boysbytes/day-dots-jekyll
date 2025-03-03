@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const closePopup = document.getElementById('closePopup');
 
     // Fetch and process data from days.json
-    fetch('days.json')
+   fetch('_data/days.json')
         .then(response => response.json())
         .then(daysData => {
             generateDays(daysData);
