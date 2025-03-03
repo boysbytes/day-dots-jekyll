@@ -1,0 +1,7 @@
+title: "Day Dots"
+description: "A day-by-day journal in a grid format"
+url: "https://yourgithubusername.github.io" # Change if using a custom domain
+baseurl: "" # Keep empty unless using a subdirectory
+permalink: /:year/:month/:day/:title.html
+plugins:
+  - jekyll-feed # Enables RSS feed
