@@ -134,7 +134,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (dayDetails.images && Array.isArray(dayDetails.images)) {
             dayDetails.images.forEach(imageName => {
                 const imgElement = document.createElement('img');
-                imgElement.src = `{{ site.baseurl }}/assets/images/${imageName}`;
+                imgElement.src = `${baseUrl}/assets/images/${imageName}`;
                 imgElement.style.maxWidth = '100%';
                 imgElement.style.height = 'auto';
                 popupContent.appendChild(imgElement);

@@ -12,14 +12,12 @@ permalink: /feed.xml
     <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
     
     {% assign days = site.data.days %}
-    {% for day_entry in days %}
-      {% assign date = day_entry[0] %}
-      {% assign day = day_entry[1] %}
+    {% for day in days %}
       <item>
         <title>{{ day.title | xml_escape }}</title>
-        <link>{{ site.url }}{{ site.baseurl }}/#{{ date | date: "%Y-%m-%d" }}</link>
-        <guid>{{ site.url }}{{ site.baseurl }}/#{{ date | date: "%Y-%m-%d" }}</guid>
-        <pubDate>{{ date | date_to_rfc822 }}</pubDate>
+        <link>{{ site.url }}{{ site.baseurl }}/#{{ day.date }}</link>
+        <guid>{{ site.url }}{{ site.baseurl }}/#{{ day.date }}</guid>
+        <pubDate>{{ day.date | date_to_rfc822 }}</pubDate>
         <description>
           {{ day.content | markdownify | strip_html | xml_escape }}
           {% if day.images %}
