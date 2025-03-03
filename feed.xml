@@ -21,7 +21,7 @@ permalink: /feed.xml
         <description>
           {{ day.content | markdownify | strip_html | xml_escape }}
           {% if day.images %}
-            Images: {% for img in day.images %}{{ img }}{% unless forloop.last %}, {% endunless %}{% endfor %}
+            Images: {% for img in day.images %}<a href="{{ site.baseurl }}/assets/images/{{ img }}">{{ img }}</a>{% unless forloop.last %}, {% endunless %}{% endfor %}
           {% endif %}
         </description>
       </item>
