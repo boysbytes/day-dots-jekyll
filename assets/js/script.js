@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const closePopup = document.getElementById('closePopup');
 
     // Fetch and process data from days.json
-    fetch('/day-dots-jekyll/assets/data/days.json')
+    fetch('/day-dots-jekyll/data.json')
     .then(response => response.json())
     .then(daysArray => {
         // Convert array to date-keyed object
