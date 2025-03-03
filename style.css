@@ -1,0 +1,258 @@
+body {
+    margin: 0; /* Reset default body margin */
+    padding: 0; /* Reset default body padding */
+    font-family: 'DM Sans', sans-serif; /* Use DM Sans font */
+    background-color: #F2F2E9;
+}
+
+header {
+    text-align: left; /* Align header text to the left */
+    padding: 20px;
+    background-color: #F2F2E9;
+    border-bottom: 1px solid #F2F2E9; /* Bottom border for header */
+    font-family: 'Corben', serif; /* Use Corben font */
+}
+
+header h1 {
+    font-size: 36pt;
+    margin-bottom: 0.5em;
+}
+
+header p {
+    font-size: 16pt;
+    color: #0D0D0D;
+}
+
+header a {
+    color: #6A8C65;
+    text-decoration: none;
+    font-family: 'Corben', serif;
+}
+
+header a:hover {
+    text-decoration: underline;
+}
+
+
+.container {
+    display: flex; /* Use flexbox layout */
+    flex-wrap: wrap; /* Enable wrapping to the next line */
+    align-items: center;
+    justify-content: space-between; /* Space between elements might get weird */
+    gap: 10px; /* Space between period symbols */
+    padding: 20px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12pt; /* Font size 10pt */
+    max-width: 960px; /* Optional: limit container width for larger screens */
+    margin: 0 auto; /* Center the container on the page */
+    line-height: 1.5; /* Adjust line-height for vertical spacing */
+}
+
+.day-period {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;               /* or 48px if you need more room */
+    height: 32px;
+    font-size: 20px;
+    /* line-height: 1; */
+    transform-origin: center;
+    vertical-align: middle;
+    cursor: pointer;
+  }
+  
+.day-period.past {
+    color: #6A8C65;
+}
+  
+.day-period.future {
+    color: #A4D99C;
+}
+  
+.day-period.today {
+    color: #A4D99C;
+    animation: pulse 1.2s infinite;
+}
+  
+/* Tweak scale so it fits the box nicely */
+@keyframes pulse {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(2);
+      opacity: 0.6;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+}
+  
+
+.day-title {
+    background-color: #A4D99C; /* Shade of color for title box */
+    padding: 5px; /* Adjust padding for title box */
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px; /* Optional: rounded corners for title box */
+    display: flex;
+    align-items: center;
+    white-space: nowrap; /* Prevent title text from wrapping within the box */
+    font-family: 'DM Sans', sans-serif; /* Use DM Sans font */
+    vertical-align: middle; /* Align title boxes vertically in the middle */
+}
+
+
+.popup {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow-y: auto; /* Enable vertical scroll if needed */
+    background-color: #F2F2E9; /* Changed: Solid background color */
+    font-family: 'DM Sans', sans-serif; /* Use DM Sans font for popup */
+}
+
+.popup-content {
+    background-color: #F2F2E9;
+    margin: 20px auto 60px auto; /* Changed: Top and bottom margin for readability */
+    padding: 20px;
+    border: none; /* Changed: Removed border */
+    width: 90%; /* Changed: Slightly smaller width for content padding */
+    max-width: 960px; /* Changed: Limit the maximum width to match main container */
+    position: relative;
+    font-family: 'DM Sans', sans-serif; /* Use DM Sans font for popup content */
+    box-sizing: border-box; /* Add: Include padding and border in width calculations*/
+}
+
+.popup-content h2 { /* Add this rule to style the date (h2 element) */
+    font-size: 14pt; /* Adjust font size as needed */
+}
+
+.popup-content h3 { /* Add this rule to style the date (h3 element) */
+    font-size: 14pt; /* Adjust font size as needed */
+    margin-top: 0; /* Remove default top margin for better spacing */
+    margin-bottom: 10px; /* Add some bottom margin to separate from content */
+}
+
+
+.popup-content p { /* Style the content paragraph if needed */
+    font-size: 12pt; /* Keep content font size at 10pt or adjust as needed */
+}
+
+.popup-content img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 10px auto; /* Centers the image */
+    border-radius: 5px; /* Optional: rounded corners */
+}
+
+.close-button {
+    color: #aaa;
+    position: fixed; /* Changed: fixed position */
+    right: 25px; /* Changed: right margin */
+    top: 25px; /* Changed: top margin */
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif; /* Use DM Sans font */
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#popupTitle {
+    font-size: 14pt; /* Slightly larger font size for popup title */
+    font-family: 'DM Sans', sans-serif; /* Use DM Sans font for popup title */
+}
+
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #F2F2E9; /* Light grey background for footer */
+    border-top: 1px solid #F2F2E9; /* Top border for footer */
+    position: fixed; /* Fixed to the bottom of the viewport */
+    bottom: 0;
+    width: 100%;
+    font-family: 'DM Sans', sans-serif; /* Use DM Sans font for footer */
+}
+
+/* Make scrollbars thinner and more subtle for WebKit browsers */
+::-webkit-scrollbar {
+    width: 8px; /* Adjust the width to make it thinner */
+    height: 8px; /* For horizontal scrollbars if you have them */
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Light grey background for the track */
+    border-radius: 10px; /* Optional: rounded corners for the track */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #c8c8c8; /* Grey color for the thumb */
+    border-radius: 10px; /* Rounded corners for the thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a0a0a0; /* Darker grey on hover */
+}
+
+body {
+    /* ... other body styles ... */
+    overflow: overlay; /* Use overlay scrollbars */
+}
+
+/* Media query for mobile devices (screen width less than 768px) */
+@media screen and (max-width: 768px) {
+
+    .container {
+        font-size: 10pt; /* Example: Reduce container font size on mobile */
+        padding: 15px; /* Adjust padding if needed for smaller screens */
+        gap: 8px; /* Adjust gap between dots/boxes */
+    }
+
+    .day-title {
+        padding: 3px; /* Adjust padding for title boxes on mobile */
+        font-size: 10pt; /* Slightly smaller title font on mobile */
+    }
+
+    .day-period {
+        width: 24px;  /* Smaller dot size */
+        height: 24px;
+        font-size: 16px; /* Smaller dot font size */
+    }
+
+
+    header h1 {
+        font-size: 24pt; /* Smaller header title on mobile */
+    }
+
+    header p {
+        font-size: 12pt; /* Smaller header paragraph on mobile */
+    }
+
+    .popup-content {
+        width: 95%; /* Make popup wider on smaller screens */
+        margin: 20% auto; /* Adjust popup margin */
+        padding: 15px; /* Adjust popup content padding */
+    }
+
+    .popup-content h2,
+    .popup-content h3,
+    .popup-content p,
+    .close-button,
+    #popupTitle {
+        font-size: 11pt; /* Adjust font sizes within the popup */
+    }
+}

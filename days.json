@@ -1,0 +1,20 @@
+{
+    "2025-02-15": {
+        "title": "💡Learned about this week-by-week map",
+        "content": "Read on [kottke.org](https://kottke.org/25/02/0046222-i-love-this-week-by-week-) about this visualization of a person's life in weeks.",
+        "images": ["gina-trapani-week-by-week.png"]
+    },
+    "2025-02-26": {
+        "title": "Day Dots lives! ",
+        "content": "Built my version of a day-by-day journal that I can publish on GitHub. Tadaa!"
+    },
+    "2025-02-27": {
+        "title": "Thinking about OKRs",
+        "content": "Another way to say I'm overcomplicating things."
+    },
+    "2025-03-01": {
+        "title": "📷Instant cameras are fun",
+        "content": "Especially cameras with thermal printers (because they're cheap).",
+        "images": ["2025-03-01.jpg"]
+    }
+}

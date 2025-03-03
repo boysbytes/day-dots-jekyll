@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day Dots</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Corben:wght@400;700&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon"> </head>
+ 
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+<body>
+    <header>
+        <h1>Day Dots</h1>
+        <p>A day-by-day grid of what I've been up to. Select a box to read a short description of the day.</p>
+        <p>The <a href="https://github.com/boysbytes/day-dots" target="_blank">code for this page</a> was inspired by <a href="https://github.com/paprikka/days" target="_blank"><i>days</i> from paprikka</a>.</p>
+    </header>
+
+    <div class="container" id="daysContainer">
+    </div>
+
+    <div id="dayPopup" class="popup">
+        <div class="popup-content">
+            <span class="close-button" id="closePopup">&times;</span>
+            <h2 id="popupTitle"></h2>
+            <div id="popupContent"></div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 Louis</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
