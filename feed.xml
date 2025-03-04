@@ -18,16 +18,12 @@ permalink: /feed.xml
         <link>{{ site.url }}{{ site.baseurl }}/#{{ day.date }}</link>
         <guid>{{ site.url }}{{ site.baseurl }}/#{{ day.date }}</guid>
         <pubDate>{{ day.date | date_to_rfc822 }}</pubDate>
-        <description>
-          {{ day.content | markdownify | strip_html | xml_escape }}
-          {% if day.images %}
-            Images: 
-            {% for img in day.images %}
-              <a href="{{ site.url }}{{ site.baseurl }}/assets/images/{{ img }}">{{ img }}</a>
-              {% unless forloop.last %}, {% endunless %}
-            {% endfor %}
-          {% endif %}
-        </description>
+        <description>{{ day.content | markdownify | strip_html | xml_escape }}</description>
+        {% if day.images %}
+          {% for img in day.images %}
+            <enclosure url="{{ site.url }}{{ site.baseurl }}/assets/images/{{ img }}" length="50000" type="image/jpeg" /><!-- Rough estimate of file size -->
+          {% endfor %}
+        {% endif %}
       </item>
     {% endfor %}
   </channel>
