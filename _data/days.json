@@ -20,5 +20,11 @@
         "title": "📷Instant cameras are fun",
         "content": "Especially cameras with thermal printers (because they're cheap).",
         "images": ["2025-03-01.jpg"]
+    },
+    {
+        "date":"2025-03-04",
+        "title": "Scaffolding",
+        "content": "Maybe the way I approach things?",
+        "images": ["2025-03-04.jpg"]
     }
 ]
