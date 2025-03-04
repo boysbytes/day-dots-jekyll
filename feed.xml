@@ -3,7 +3,7 @@ layout: null
 permalink: /feed.xml
 ---
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
     <atom:link href="{{ '/feed.xml' | absolute_url }}" rel="self" type="application/rss+xml"/>
     <title>{{ site.title | xml_escape }}</title>
@@ -18,6 +18,9 @@ permalink: /feed.xml
         <link>{{ site.url }}{{ site.baseurl }}/#{{ day.date }}</link>
         <guid>{{ site.url }}{{ site.baseurl }}/#{{ day.date }}</guid>
         <pubDate>{{ day.date | date_to_rfc822 }}</pubDate>
+        {% if day.images %}
+          <media:thumbnail url="{{ site.url }}{{ site.baseurl }}/assets/images/{{ day.images[0] }}" />
+        {% endif %}
         <content:encoded><![CDATA[
           {{ day.content | markdownify }}
           {% if day.images %}
@@ -27,9 +30,7 @@ permalink: /feed.xml
           {% endif %}
         ]]></content:encoded>
         {% if day.images %}
-          {% for img in day.images %}
-            <enclosure url="{{ site.url }}{{ site.baseurl }}/assets/images/{{ img }}" length="50000" type="image/jpeg" />
-          {% endfor %}
+          <!-- <enclosure url="{{ site.url }}{{ site.baseurl }}/assets/images/{{ img }}" length="50000" type="image/jpeg" /> -->
         {% endif %}
       </item>
     {% endfor %}
